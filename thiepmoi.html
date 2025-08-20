@@ -233,29 +233,29 @@
 
 
      <script>
-        window.onload = function() {
+  window.onload = function() {
     // Lấy tất cả các phần tử cho các hiệu ứng fade-down, fade-up, fade-right, fade-left, zoom-in
-    const fadeDownElements = document.querySelectorAll('.img-logo, .lb-box2, .lb-box22, .lb-cnt, .timeline-item, .wd, .lb-wp, .lb-wp2, .lb-add');  // Các phần tử fade-down
-    const fadeUpElements = document.querySelectorAll('.box-date');    // Các phần tử fade-up
-    const fadeRightElements = document.querySelectorAll('.lb1-p1, .img1');                               // Các phần tử fade-right
-    const fadeLeftElements = document.querySelectorAll('.pp1');                                // Các phần tử fade-left
-    const zoomInElements = document.querySelectorAll('.lb-fir1, .lb-fir2, .lb-fir3');                // Các phần tử zoom-in
+    const fadeDownElements = document.querySelectorAll('.img-logo, .lb-box2, .lb-box22, .lb-cnt, .timeline-item, .wd, .lb-wp, .lb-wp2, .lb-add');
+    const fadeUpElements = document.querySelectorAll('.box-date');
+    const fadeRightElements = document.querySelectorAll('.lb1-p1, .img1');
+    const fadeLeftElements = document.querySelectorAll('.pp1');
+    const zoomInElements = document.querySelectorAll('.lb-fir1, .lb-fir2, .lb-fir3');
 
     // Cấu hình của IntersectionObserver
     const options = {
         root: null, // Theo mặc định là viewport
-        threshold: 0.5 // Kích hoạt khi 50% phần tử hiển thị trong viewport
+        threshold: 0.5, // Kích hoạt-dot khi 50% phần tử hiển thị trong viewport
+        rootMargin: '50px' // Mở rộng vùng quan sát thêm 50px
     };
 
-    // Tạo đối tượng IntersectionObserver để theo dõi sự xuất hiện và mất đi của phần tử
+    // Tạo đối tượng IntersectionObserver
     const observer = new IntersectionObserver((entries, observer) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                // Nếu phần tử xuất hiện trong viewport, thêm lớp "visible"
+                // Thêm lớp "visible" khi phần tử xuất hiện
                 entry.target.classList.add('visible');
-            } else {
-                // Nếu phần tử không còn trong viewport, xóa lớp "visible"
-                entry.target.classList.remove('visible');
+                // Ngừng quan sát phần tử sau khi nó đã xuất hiện
+                observer.unobserve(entry.target);
             }
         });
     }, options);
