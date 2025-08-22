@@ -547,15 +547,15 @@ hr{
 .tt-dd{
     width: 200px;
     border: 1px solid #111;
-    border-radius: 70%;
+    border-radius: 50px;
     padding: 10px 0;
-    margin-top: 50px;
+    margin-top: 10px;
 }
 
 .wd{
-    font-size: 40px;
-    margin-top: 20px;
-    letter-spacing: 5px;
+    font-size: 35px;
+    margin-top: 50px;
+    letter-spacing: 2px;
 }
 
 .box-date{
@@ -830,7 +830,12 @@ background-color: #cccccb;
     /* z-index: 2; */
     font-size: 20px;
     margin-top: 350px;
+    text-align: center;
 
+}
+
+i{
+    font-size: 15px;
 }
 
 
