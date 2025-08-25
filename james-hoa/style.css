@@ -463,19 +463,29 @@ hr{
 .box-dresscode{
     display: flex;
     flex-direction: column;
-    justify-content: flex-end;
-    align-items: flex-end;
+    justify-content: center;
+    align-items: center;
     margin: 100px 20px 0 0;
 }
 
 .lb-dress{
     font-size: 30px;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
+}
+
+.fa-diamond{
+    font-size: .5em;
+    margin-bottom: 20px;
 }
 
 .lb-dress2{
-    margin-bottom: 10px;
-    font-size: 10px;
+    margin-bottom: 5px;
+    font-size: 1em;
+}
+
+.lb-dress3{
+    font-size: .7em;
+    text-align: center;
 }
 
 .img-dress{
